@@ -205,6 +205,7 @@ Add localist parameters to `constructor` function in `this.state` (localist can 
         api_key: 'secret',
         keyword: '',
         type: '',
+        days: 365,
         pp: 6, //only return max 6 events
       },
     }
