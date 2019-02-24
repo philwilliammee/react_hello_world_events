@@ -8,6 +8,8 @@ class Event extends React.Component {
         api_key: 'secret',
         keyword: '',
         type: '',
+        singleday: false,
+        days: 365, //get events for next year
         pp: 6, //only view 6
       },
       events: [],
