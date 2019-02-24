@@ -52,12 +52,14 @@ class Event extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.fetchEvents();
   }
 
   render() {
     return (
       <div className='bootstrap container'>
         {this.renderform()}
+        {this.renderEvents()}
       </div>
     )
   }
@@ -99,4 +101,59 @@ class Event extends React.Component {
       </form>
     )
   }
+
+
+  renderEvents() {
+    return (
+      <div className='container'>
+        <h2>Upcomming Events</h2>
+        <div className="events-listing events-listing-inline inline">
+          {this.state.events.length ?
+            this.state.events.map((obj, id) => {
+              return this.renderEventItem(obj, id)
+            }) : this.state.message
+          }
+        </div>
+      </div>
+    )
+  }
+
+  renderEventItem(obj, id) {
+    //console.log(obj);
+    let event = obj.event;
+    const [event_month, event_day, event_time] = buildEventDetails(event);
+
+    if (!(event_month || event_day || event_time)) {
+      return "error in event data";
+    }
+    return (
+      <div key={'event-list-' + id} className="views-row">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm-2 event-img">
+              <img src={event.photo_url} alt="" height='50' width='50' />
+            </div>
+            <div className="col-sm-2 event-month-and-day">
+
+              <div>
+                <span className="event-month">{event_month}</span>
+                <span className="event-day">{event_day}</span>
+              </div>
+            </div>
+            <div className="col-sm-8 event-title-and-location">
+              <div className="event-title">
+                <a href={event.localist_url} >{event.title}</a>
+              </div>
+              <div className="event-times">
+                <i className="far fa-clock"></i>{event_time}
+              </div>
+              <div className="event-location">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
 }
