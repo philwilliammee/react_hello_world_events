@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    
-    <!-- Don't use this in production: -->
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-  </head>
-  <body>
-    <div id="root"
-      data-title='Search Localist Events'  
-      data-api-version='2.2'
-    ></div>
-    <script type="text/babel" src='./js/events.jsx'></script>
-    <script type="text/babel" src='./js/app.jsx'></script>
-    <!--
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <link rel="stylesheet" href='https://codepen.io/philwilliammee/pen/OdKmEW.css' />
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <!-- include axois for request -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src='https://codepen.io/philwilliammee/pen/OdKmEW.js'></script>
+</head>
+
+<body>
+  <div id="root" data-title='Search Localist Events' data-api-version='2.2'></div>
+  <script type="text/babel" src='./js/events.jsx'></script>
+  <script type="text/babel" src='./js/app.jsx'></script>
+  <!--
       Note: this page is a great way to try React but it's not suitable for production.
       It slowly compiles JSX with Babel in the browser and uses a large development build of React.
 
@@ -29,5 +33,6 @@
       You can also use React without JSX, in which case you can remove Babel:
       https://reactjs.org/docs/react-without-jsx.html
     -->
-  </body>
+</body>
+
 </html>
