@@ -225,6 +225,7 @@ In the `component` Create the event handler functions, `handleChange` and `handl
 ~~~jsx
 // the input onChange event handler
 handleChange(e) {
+   //const val = e.target.name=='type'?e.target.value.replace(/\D/g,''):e.target.value;
    this.state.localistParams[e.target.name] = e.target.value;
    this.setState({ localistParams: this.state.localistParams });
 }
