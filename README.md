@@ -73,8 +73,7 @@ Open up localhost in browser you should see
 
 ~~~bash
 $mkdir js && cd js
-$touch app.jsx
-$touch events.jsx
+$touch app.jsx events.jsx
 $echo '[{"api_key":"KLhy2GtuSAGirYGY"}]' >> settings.json
 ~~~
 
