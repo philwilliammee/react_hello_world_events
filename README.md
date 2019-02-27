@@ -47,7 +47,7 @@ Commits `git checkout [commit#]`
 
 Lets get started:
 
-## 1. React Hello World
+## 1. React Hello World (v0.1)
 
 ~~~bash
 $mkdir react_projects && cd react_projects
@@ -69,18 +69,18 @@ Open up localhost in browser you should see
 
 ![hello world](https://raw.githubusercontent.com/philwilliammee/react_hello_world_events/master/resources/images/img1.png)
 
-## 2. Set up folders and files
+## 2. Set up folders and files (v0.2)
 
 ~~~bash
 $mkdir js && cd js
-$touch app.jsx
-$touch events.jsx
+$touch app.jsx events.jsx
 $echo '[{"api_key":"KLhy2GtuSAGirYGY"}]' >> settings.json
 ~~~
 
 Folder tree structure should look like
 
 ```bash
+$tree /f /a
 react_projects:.
 |
 \---react_hello_world_events
@@ -102,7 +102,7 @@ ReactDOM.render(
  );
 ~~~
 
-Open `events.jsx` and create a Event react component with constructor
+Open `events.jsx` and create a Event react component `rcc` with constructor `rconst`
 
 ~~~jsx
 class Event extends React.Component {
@@ -134,7 +134,7 @@ Goto localhost and refresh the page, you should see:
 
 ![hello world](https://raw.githubusercontent.com/philwilliammee/react_hello_world_events/master/resources/images/img1.png)
 
-## 3. Initializing component with data
+## 3. Initializing component with data (v0.3)
 
 An example of one way to pass data to react componets.
 
@@ -191,7 +191,7 @@ If you have react dev tools installed. Open react dev tools, change state and se
 
 ![dev tools](https://raw.githubusercontent.com/philwilliammee/react_hello_world_events/master/resources/images/dev_tools.png)
 
-## 4. Simple Search form
+## 4. Simple Search form (v0.4)
 
 From here out all changes will be in `events.jsx` unless otherwise noted.
 
@@ -205,6 +205,7 @@ Add localist parameters to `constructor` function in `this.state` (localist can 
         api_key: 'secret',
         keyword: '',
         type: '',
+        days: 365,
         pp: 6, //only return max 6 events
       },
     }
@@ -223,6 +224,7 @@ In the `component` Create the event handler functions, `handleChange` and `handl
 ~~~jsx
 // the input onChange event handler
 handleChange(e) {
+   //const val = e.target.name=='type'?e.target.value.replace(/\D/g,''):e.target.value;
    this.state.localistParams[e.target.name] = e.target.value;
    this.setState({ localistParams: this.state.localistParams });
 }
@@ -290,7 +292,7 @@ goto localhost in browser and refresh *Notice updating inputs in form updates st
 
 ![Search Form](https://raw.githubusercontent.com/philwilliammee/react_hello_world_events/master/resources/images/simple_form.png)
 
-## Axios and styling
+## Axios and styling 
 
 Modify `index.html` to import axios some styling and helper js functions
 
@@ -346,7 +348,7 @@ Open browser refresh localhost should look like below, notice events are showing
 
 ![Search Form](https://raw.githubusercontent.com/philwilliammee/react_hello_world_events/master/resources/images/styled_form.png)
 
-## 5. Render events view
+## 5. Render events view (v0.5)
 
 In `handleSubmit` function call the `fetchEvents` function to get new data from localist when the form is submitted.
 
