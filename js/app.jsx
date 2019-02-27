@@ -1,8 +1,8 @@
-const react_target = document.getElementById('root');
+const reactTarget = document.getElementById('root');
 ReactDOM.render(
     <Event
-        title={react_target.dataset.title}
-        api_version={react_target.dataset.apiVersion}
+        title={reactTarget.dataset.title}
+        api_version={reactTarget.dataset.apiVersion}
     />,
-    react_target
+    reactTarget
 );
