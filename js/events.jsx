@@ -39,7 +39,6 @@ class Event extends React.Component {
 
     fetchEvents() {
         const params = encodeParams(this.state.localistParams);
-        // eslint-disable-next-line max-len
         const url = `//events.cornell.edu/api/${this.api_version}/events${params}`;
         axios.get(url)
             .then((response) => {
@@ -155,7 +154,6 @@ class Event extends React.Component {
                             />
                         </div>
                         <div className='col-sm-2 event-month-and-day'>
-
                             <div>
                                 <span className='event-month'>
                                     {eventMonth}

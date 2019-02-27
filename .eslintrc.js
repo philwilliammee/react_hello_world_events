@@ -27,13 +27,8 @@ module.exports = {
       'no-unused-vars': 1,
       // jsx version of no-unused-vars
       'react/jsx-uses-vars': 1,
-        // Indent with 4 spaces
-        "indent": ["error", 4],
-
-        // Indent JSX with 4 spaces
-        "react/jsx-indent": ["error", 4],
-
-        // Indent props with 4 spaces
-        "react/jsx-indent-props": ["error", 4],
+      //4 white spaces defined by laravel editor config
+      "indent": ["error", 4],
+      "max-len": [2, 80, 4, {ignoreComments: true, ignoreUrls: true, ignorePattern: "const url = `//"}]
     }
   }
