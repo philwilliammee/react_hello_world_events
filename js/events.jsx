@@ -28,7 +28,6 @@ class Event extends React.Component {
     componentDidMount() {
         axios.get('./js/settings.json')
             .then((response) => {
-                console.log(response);
                 this.state.localistParams.api_key = response.data[0].api_key;
                 this.fetchEvents();
             })
