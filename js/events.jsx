@@ -40,8 +40,8 @@ class Event extends React.Component {
 
     fetchEvents() {
         const params = encodeParams(this.state.localistParams);
-        const url = `//events.cornell.edu/api/
-        ${this.api_version}/events${params}`;
+        // eslint-disable-next-line max-len
+        const url = `//events.cornell.edu/api/${this.api_version}/events${params}`;
         axios.get(url)
             .then((response) => {
                 this.setState({events: response.data.events,
